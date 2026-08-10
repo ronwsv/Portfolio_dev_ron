@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ron Williams Viera | AI Engineer</title>
+    <meta
+      name="description"
+      content="Portfólio de Ron Williams Viera, AI Engineer e Full Stack Developer especializado em automação inteligente, plataformas escaláveis e IA aplicada a negócios."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="theme-color" content="#2a2c39" />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Marca que o JS esta ativo antes da primeira pintura: o CSS so esconde os
+         .reveal sob esta classe. Sem JS, o conteudo aparece normalmente em vez
+         de ficar preso invisivel; e como roda no <head>, nao ha piscada. -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true"></div>
+    <button class="menu-btn" id="menuToggle" aria-label="Abrir menu lateral">Menu</button>
+
+    <div class="layout" id="inicio">
+      <aside class="sidebar" id="sidebar">
+        <div class="profile-card reveal">
+          <figure class="portrait-shell">
+            <img
+              class="portrait"
+              src="ron_pose.png"
+              alt="Foto de Ron Williams Viera"
+            />
+            <div class="portrait-fallback">RW</div>
+            <div class="orbit orbit-lg" aria-hidden="true"></div>
+            <div class="orbit orbit-sm" aria-hidden="true"></div>
+            <div class="orbit-dot orbit-dot-top" aria-hidden="true">in</div>
+            <div class="orbit-dot orbit-dot-bottom" aria-hidden="true">gh</div>
+          </figure>
+          <p class="eyebrow">AI Engineer</p>
+          <h1>Ron Williams Viera</h1>
+          <p class="intro">
+            Eu desenho e entrego produtos inteligentes com IA aplicada,
+            automação e arquitetura de software para gerar impacto real no negócio.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-solid" href="https://www.linkedin.com/in/ron-williams-viera/?locale=en-US" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn btn-soft" href="https://github.com/ronwsv" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+
+          <div class="contact-mini">
+            <a href="mailto:ronwsv@gmail.com">ronwsv@gmail.com</a>
+            <a href="tel:+5511994306887">+55 11 99430-6887</a>
+            <span>São Paulo, Brasil · Remoto</span>
+          </div>
+        </div>
+
+        <nav class="side-nav reveal">
+          <a href="#posicionamento">Posicionamento</a>
+          <a href="#expertise">Especialidades</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#experiencias">Experiências</a>
+          <a href="#contato">Contato</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section class="panel hero-panel reveal" id="posicionamento">
+          <p class="eyebrow">AI Engineer + Full Stack Builder</p>
+          <h2>
+            Construo sistemas com <span>IA aplicada</span> para aumentar
+            eficiência operacional, clareza decisória e velocidade de entrega.
+          </h2>
+          <p>
+            Meu posicionamento combina engenharia de software, integração de
+            dados e automação inteligente para transformar processos complexos em
+            plataformas confiáveis, escaláveis e orientadas a resultado.
+          </p>
+          <ul class="impact-list">
+            <li>Automação inteligente com IA, APIs e fluxos de dados</li>
+            <li>Arquitetura cloud escalável para produtos SaaS</li>
+            <li>Aplicações com foco em produtividade e confiabilidade</li>
+          </ul>
+        </section>
+
+        <section class="panel reveal" id="expertise">
+          <div class="section-head">
+            <p class="eyebrow">Especialidades</p>
+            <h3>Stack orientada para AI Products</h3>
+          </div>
+          <div class="chips">
+            <span>Python</span>
+            <span>TypeScript</span>
+            <span>Flask</span>
+            <span>Django</span>
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Flutter</span>
+            <span>SvelteKit</span>
+            <span>Go</span>
+            <span>Dart</span>
+            <span>RAG</span>
+            <span>LLMs</span>
+            <span>n8n</span>
+            <span>SEO</span>
+            <span>GEO</span>
+            <span>AWS</span>
+            <span>Docker</span>
+            <span>REST APIs</span>
+            <span>PostgreSQL</span>
+          </div>
+        </section>
+
+        <section class="panel reveal" id="projetos">
+          <div class="section-head">
+            <p class="eyebrow">Projetos</p>
+            <h3>Projetos reais e em evolução</h3>
+          </div>
+
+          <article class="featured-project">
+            <div>
+              <p class="tag">Projeto em destaque</p>
+              <h4>Notebook Zang · Orquestração inteligente de análise contábil</h4>
+              <p>
+                Plataforma para acompanhamento de execuções, divergências e
+                pendências em módulos contábeis, com foco em produtividade do time
+                e rastreabilidade operacional.
+              </p>
+              <p class="meta">
+                Cada fechamento roda os módulos contábeis em sequência e
+                consolida as divergências e ausências num painel único, para o
+                time atacar primeiro o que realmente trava o mês.
+              </p>
+              <div class="featured-actions">
+                <a href="https://claude.ai/code/artifact/df6c55f7-b7b1-4235-9847-c249e885905e" target="_blank" rel="noreferrer">Ver artifact</a>
+                <a href="#contato">Solicitar demo</a>
+              </div>
+            </div>
+            <ul class="featured-stats" aria-label="Indicadores do projeto">
+              <li><strong>188</strong><span>Total</span></li>
+              <li><strong>188</strong><span>Analisados</span></li>
+              <li><strong>173</strong><span>Pendências</span></li>
+            </ul>
+
+            <figure
+              class="gallery"
+              data-gallery
+              role="group"
+              aria-roledescription="carrossel"
+              aria-label="Telas do Notebook Zang"
+            >
+              <div class="gallery-frame">
+                <button
+                  class="gallery-nav gallery-prev"
+                  type="button"
+                  data-gallery-prev
+                  aria-label="Imagem anterior"
+                >
+                  <span aria-hidden="true">&#8249;</span>
+                </button>
+
+                <div class="gallery-track">
+                  <img
+                    class="gallery-slide is-active"
+                    src="assets/notebook/12.png"
+                    alt="Painel do fechamento com os módulos contábeis e o status de cada um"
+                    data-caption="Painel do fechamento: os módulos rodam em sequência e cada um devolve divergências, ausências e tempo de execução."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/notebook/13.png"
+                    alt="Detalhe de um módulo com um lançamento pendente por nota fiscal ausente"
+                    data-caption="Pendência aberta: o lançamento existe, mas o documento não. O módulo diz o que falta, não apenas que falhou."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/notebook/14.png"
+                    alt="Módulo com as checagens de fatura, comprovante e conferência de valor aprovadas"
+                    data-caption="Quando bate, mostra por quê: fatura, comprovante e conferência de valor, cada checagem ligada ao documento que a sustenta."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/notebook/16.png"
+                    alt="Catálogo de skills, com uma regra de conferência por tipo de despesa"
+                    data-caption="Cada tipo de despesa tem sua própria skill — a regra de conferência é configurável sem passar por deploy."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/notebook/17.png"
+                    alt="Seleção de notebook por mês, com o histórico de fechamentos anteriores"
+                    data-caption="Um notebook por cliente e por mês, com o histórico de fechamentos anteriores sempre à mão."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/notebook/15.png"
+                    alt="Formulário de abertura de chamado de suporte dentro da plataforma"
+                    data-caption="Suporte dentro da própria tela do fechamento, já vinculado à pasta e ao lançamento em questão."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+
+                <button
+                  class="gallery-nav gallery-next"
+                  type="button"
+                  data-gallery-next
+                  aria-label="Próxima imagem"
+                >
+                  <span aria-hidden="true">&#8250;</span>
+                </button>
+
+                <p class="gallery-counter" data-gallery-counter aria-hidden="true">1 / 6</p>
+              </div>
+
+              <figcaption class="gallery-caption" data-gallery-caption aria-live="polite">
+                Painel do fechamento: os módulos rodam em sequência e cada um devolve divergências, ausências e tempo de execução.
+              </figcaption>
+
+              <div class="gallery-dots" data-gallery-dots role="tablist" aria-label="Selecionar imagem"></div>
+            </figure>
+          </article>
+
+          <article class="featured-project">
+            <div>
+              <p class="tag">Projeto em destaque · Código privado</p>
+              <h4>Avaliação de desempenho com feedback assistido por IA</h4>
+              <p>
+                Sistema de avaliação 180° que cruza a autoavaliação do
+                colaborador com a avaliação do gestor. O cálculo de divergência
+                é determinístico em código — o modelo escreve a leitura por cima
+                de números que ele não inventou, então o resultado é
+                reproduzível e auditável.
+              </p>
+              <p>
+                Gera plano de desenvolvimento com metas e checkpoints, além de um
+                roteiro de conversa para o gestor. Nenhum feedback chega ao
+                colaborador sem aprovação humana registrada.
+              </p>
+              <p class="meta">
+                SvelteKit · TypeScript · Drizzle · SQLite · OpenAI · Docker
+              </p>
+              <div class="featured-actions">
+                <a href="#contato">Solicitar detalhes técnicos</a>
+              </div>
+            </div>
+            <ul class="featured-stats" aria-label="Indicadores do ciclo de avaliação">
+              <li><strong>85</strong><span>Avaliados</span></li>
+              <li><strong>100%</strong><span>Cobertura</span></li>
+              <li><strong>3</strong><span>Trilhas</span></li>
+            </ul>
+
+            <figure
+              class="gallery"
+              data-gallery
+              role="group"
+              aria-roledescription="carrossel"
+              aria-label="Telas do sistema de avaliação"
+            >
+              <div class="gallery-frame">
+                <button
+                  class="gallery-nav gallery-prev"
+                  type="button"
+                  data-gallery-prev
+                  aria-label="Imagem anterior"
+                >
+                  <span aria-hidden="true">&#8249;</span>
+                </button>
+
+                <div class="gallery-track">
+                  <img
+                    class="gallery-slide is-active"
+                    src="assets/avaliacao/7.png"
+                    alt="Tela de seleção do colaborador, com as trilhas de avaliação em abas"
+                    data-caption="Cada trilha tem seu próprio conjunto de competências. Nomes e identificação anonimizados nas capturas."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/avaliacao/8.png"
+                    alt="Comparação de notas por pilar e por competência, com a coluna de divergência"
+                    data-caption="Autoavaliação e nota do gestor lado a lado: a divergência de cada competência sai de código, não do modelo."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/avaliacao/9.png"
+                    alt="Análise de IA com pontos fortes e oportunidades de desenvolvimento"
+                    data-caption="A IA escreve a leitura por cima desses números — cada ponto ancorado num pilar, e nada sai sem aprovação do gestor."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/avaliacao/10.png"
+                    alt="Painel com o progresso do ciclo e a distribuição dos padrões de autopercepção"
+                    data-caption="Painel do ciclo: o que já foi respondido, analisado e devolvido em conversa 1:1, com o padrão de autopercepção do grupo."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/avaliacao/11.png"
+                    alt="Média por pilar e ranking das competências com maior divergência"
+                    data-caption="Média por pilar e as competências de maior divergência — onde o desenvolvimento tem mais a ganhar."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+
+                <button
+                  class="gallery-nav gallery-next"
+                  type="button"
+                  data-gallery-next
+                  aria-label="Próxima imagem"
+                >
+                  <span aria-hidden="true">&#8250;</span>
+                </button>
+
+                <p class="gallery-counter" data-gallery-counter aria-hidden="true">1 / 5</p>
+              </div>
+
+              <figcaption class="gallery-caption" data-gallery-caption aria-live="polite">
+                Cada trilha tem seu próprio conjunto de competências. Nomes e identificação anonimizados nas capturas.
+              </figcaption>
+
+              <div class="gallery-dots" data-gallery-dots role="tablist" aria-label="Selecionar imagem"></div>
+            </figure>
+          </article>
+
+          <article class="featured-project">
+            <div>
+              <p class="tag">Projeto em destaque · Autoria da IA</p>
+              <h4>Atas · Do áudio da assembleia ao documento formal</h4>
+              <p>
+                Redigir uma ata consumia quase um dia de trabalho de um gerente:
+                ouvir de novo a gravação inteira de uma assembleia de três a
+                quatro horas, reconstituir quem disse o quê e anotar à mão o que
+                importava. Construí a frente de IA da plataforma para atacar
+                exatamente essa etapa — hoje o gerente parte de um rascunho já
+                estruturado, em vez da estaca zero.
+              </p>
+              <p>
+                Um pipeline assíncrono de duas fases — transcrição com separação
+                de falantes, depois estruturação no padrão formal exigido — em
+                que a transcrição fica reaproveitável sem reprocessar o áudio. E
+                um editor colaborativo com assistente que consulta os documentos
+                do próprio condomínio: em vez de empurrar contexto no prompt, o
+                modelo recebe uma ferramenta de busca e decide sozinho quando
+                consultar, devolvendo o arquivo e o trecho que sustentam cada
+                resposta. Cada condomínio tem seu contexto isolado.
+              </p>
+              <p class="meta">
+                Pipeline em adoção crescente: de zero a cerca de dez assembleias
+                transcritas automaticamente por mês, ao longo de seis meses.
+              </p>
+              <p class="meta">
+                SvelteKit · Tiptap · Flask · Celery · Redis · GPT-4o · AssemblyAI · Docker
+              </p>
+              <div class="featured-actions">
+                <a href="#contato">Solicitar detalhes técnicos</a>
+              </div>
+            </div>
+            <ul class="featured-stats" aria-label="Indicadores da plataforma">
+              <li><strong>582</strong><span>Atas</span></li>
+              <li><strong>201</strong><span>Condomínios</span></li>
+              <li><strong>12</strong><span>Meses no ar</span></li>
+            </ul>
+
+            <figure
+              class="gallery"
+              data-gallery
+              role="group"
+              aria-roledescription="carrossel"
+              aria-label="Telas da plataforma Atas"
+            >
+              <div class="gallery-frame">
+                <button
+                  class="gallery-nav gallery-prev"
+                  type="button"
+                  data-gallery-prev
+                  aria-label="Imagem anterior"
+                >
+                  <span aria-hidden="true">&#8249;</span>
+                </button>
+
+                <div class="gallery-track">
+                  <img
+                    class="gallery-slide is-active"
+                    src="assets/atas/1.png"
+                    alt="Tela da ATA com o botão Gerar ATA com IA e a opção de envio manual do documento"
+                    data-caption="Ponto de partida: a ata pode ser gerada pela IA a partir do áudio ou enviada manualmente."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/atas/2.png"
+                    alt="Pipeline em execução com as etapas transcrição do áudio, análise com IA e edição no editor"
+                    data-caption="Pipeline assíncrono em duas fases: transcrição com separação de falantes, depois estruturação."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/atas/3.png"
+                    alt="Editor da ata com o documento estruturado ao centro e a transcrição por falante à direita"
+                    data-caption="Editor colaborativo: documento no padrão formal ao centro, transcrição por falante sempre ao lado."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/atas/4.png"
+                    alt="Ação de IA processando o trecho selecionado do documento"
+                    data-caption="Ações de IA sobre o trecho selecionado — reescrever, formalizar, resumir ou expandir."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/atas/5.png"
+                    alt="Sugestão da IA exibida como diff com os botões aceitar e rejeitar"
+                    data-caption="Toda sugestão chega como diff: nada entra no documento sem aceite explícito do gerente."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <img
+                    class="gallery-slide"
+                    src="assets/atas/6.png"
+                    alt="Reescrita de um item inteiro da ata comparando texto original e texto sugerido"
+                    data-caption="Reescrita de um item inteiro: original e proposta lado a lado, com os números preservados."
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+
+                <button
+                  class="gallery-nav gallery-next"
+                  type="button"
+                  data-gallery-next
+                  aria-label="Próxima imagem"
+                >
+                  <span aria-hidden="true">&#8250;</span>
+                </button>
+
+                <p class="gallery-counter" data-gallery-counter aria-hidden="true">1 / 6</p>
+              </div>
+
+              <figcaption class="gallery-caption" data-gallery-caption aria-live="polite">
+                Ponto de partida: a ata pode ser gerada pela IA a partir do áudio ou enviada manualmente.
+              </figcaption>
+
+              <div class="gallery-dots" data-gallery-dots role="tablist" aria-label="Selecionar imagem"></div>
+            </figure>
+          </article>
+
+          <article class="featured-project">
+            <div>
+              <p class="tag">Projeto em destaque · Código público</p>
+              <h4>Bazarof · Plataforma operacional para negócios educacionais</h4>
+              <p>
+                SaaS multi-tenant no ar: cada escola recebe o próprio subdomínio,
+                site de captação e portal do aluno, com acesso separado para o
+                contador. Cobrança recorrente, assinatura digital de contratos e
+                WhatsApp integrados ao fluxo.
+              </p>
+              <p>
+                A camada de IA gera o feedback pós-aula a partir das anotações do
+                professor, resume progresso e sinaliza risco de evasão — e só
+                roda quando a aula está concluída e tem notas registradas, para
+                não produzir avaliação sobre dado que não existe.
+              </p>
+              <p class="meta">
+                Cada regra de segurança tem um teste que a defende: se uma
+                refatoração futura enfraquecer a proteção sem querer, a suíte
+                quebra antes de o código chegar à produção. A cobertura vai do
+                isolamento entre escolas às permissões por papel e à
+                anonimização de dados pessoais.
+              </p>
+              <p class="meta">
+                FastAPI · SQLModel · PostgreSQL · Celery · Redis · SvelteKit · Docker
+              </p>
+              <div class="featured-actions">
+                <a href="https://bazarof.com.br/" target="_blank" rel="noreferrer">Ver plataforma</a>
+                <a href="https://github.com/ronwsv/mybusiness" target="_blank" rel="noreferrer">Ver repositório</a>
+              </div>
+            </div>
+            <ul class="featured-stats" aria-label="Indicadores da plataforma">
+              <li><strong>25</strong><span>Módulos de API</span></li>
+              <li><strong>36</strong><span>Testes de segurança</span></li>
+              <li><strong>7</strong><span>Serviços</span></li>
+            </ul>
+          </article>
+
+          <div class="projects-grid">
+            <article class="project-card">
+              <p class="tag">Em andamento · GitHub público</p>
+              <h4>Rbot_RAG</h4>
+              <p>
+                Chatbot com RAG para respostas contextualizadas com foco em
+                cenários de atendimento e suporte.
+              </p>
+              <p class="meta">Python · LLMs · RAG</p>
+              <a href="https://github.com/ronwsv/Rbot_RAG" target="_blank" rel="noreferrer">Ver repositório</a>
+            </article>
+
+            <article class="project-card">
+              <p class="tag">Em andamento · GitHub público</p>
+              <h4>Web-Scrapping_imobiliario_com_IA</h4>
+              <p>
+                Captura automatizada de dados com apoio de IA e saída estruturada
+                para JSON e planilhas.
+              </p>
+              <p class="meta">Python · Scraping · IA</p>
+              <a href="https://github.com/ronwsv/Web-Scrapping_imobiliario_com_IA" target="_blank" rel="noreferrer">Ver repositório</a>
+            </article>
+
+            <article class="project-card">
+              <p class="tag">Entregue · GitHub público</p>
+              <h4>Transcricao_2.1</h4>
+              <p>
+                Aplicação de transcrição com filas assíncronas para suportar
+                processamento escalável de áudio.
+              </p>
+              <p class="meta">Python · Flask · Redis · Celery</p>
+              <a href="https://github.com/ronwsv/Transcricao_2.1" target="_blank" rel="noreferrer">Ver repositório</a>
+            </article>
+
+            <article class="project-card">
+              <p class="tag">Entregue · GitHub público</p>
+              <h4>controle-ponto-eletronico</h4>
+              <p>
+                Produto web para controle de ponto com interface moderna e foco
+                em usabilidade operacional.
+              </p>
+              <p class="meta">TypeScript · React · Tailwind</p>
+              <a href="https://github.com/ronwsv/controle-ponto-eletronico" target="_blank" rel="noreferrer">Ver repositório</a>
+            </article>
+
+            <article class="project-card">
+              <p class="tag">Código privado · Em produção</p>
+              <h4>Previsão C · Classificação contábil assistida por IA</h4>
+              <p>
+                Sugere a conta contábil de cada despesa usando o histórico do
+                próprio cliente como fonte de verdade. Arquitetura em cascata:
+                uma base local de decisões anteriores resolve o que já tem
+                precedente e só o restante chega ao LLM — cada resposta nova
+                realimenta a base, então o custo por classificação cai conforme
+                o uso cresce.
+              </p>
+              <p>
+                Toda sugestão vem com confiança, justificativa e os precedentes
+                que a sustentam, para o time contábil auditar.
+              </p>
+              <p class="meta">Python · Flask · Gemini · RAG · SQLite · Docker</p>
+              <a href="#contato">Solicitar detalhes técnicos</a>
+            </article>
+
+            <article class="project-card">
+              <p class="tag">Curadoria AI Engineer</p>
+              <h4>Labs e repositórios de referência</h4>
+              <p>
+                Exploração contínua de agentic systems e AI engineering para
+                acelerar experimentação e transferência para produção.
+              </p>
+              <p class="meta">BrowserOS · ai-engineering-hub · tensorzero</p>
+              <a href="https://github.com/ronwsv?tab=repositories" target="_blank" rel="noreferrer">Ver todos os repositórios</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel reveal" id="experiencias">
+          <div class="section-head">
+            <p class="eyebrow">Experiências</p>
+            <h3>Trajetória em software e IA aplicada</h3>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <p class="time">2024 - Atual</p>
+              <h4>Zangari Administradora</h4>
+              <p class="meta">Software Developer | AI-driven solutions</p>
+              <p>
+                Desenvolvimento de sistemas com Python, React e AWS,
+                integrações por API, autenticação, dashboards e automação para o
+                time contábil.
+              </p>
+            </article>
+
+            <article class="timeline-item">
+              <p class="time">2021 - 2022</p>
+              <h4>Enjoy2Learn</h4>
+              <p class="meta">Web Development & Marketing Operations</p>
+              <p>
+                Evolução de site e landing pages com foco em performance,
+                aquisição e análise de campanhas conectadas aos objetivos de negócio.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel contact-panel reveal" id="contato">
+          <p class="eyebrow">Contato</p>
+          <h3>Disponível para projetos remotos e consultoria em IA aplicada.</h3>
+          <div class="contact-grid">
+            <a href="mailto:ronwsv@gmail.com">ronwsv@gmail.com</a>
+            <a href="tel:+5511994306887">+55 11 99430-6887</a>
+            <a href="https://www.linkedin.com/in/ron-williams-viera/?locale=en-US" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://github.com/ronwsv" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

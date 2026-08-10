@@ -1,0 +1,1033 @@
+/* ===========================================================
+   Design system extraido do template Lendex (hasthemes.com)
+   bg #2a2c39 · surface #252734 · ink #fff · muted #858792
+   Cormorant Garamond (titulos) + Poppins (corpo)
+   =========================================================== */
+
+:root {
+  --bg: #2a2c39;
+  --surface: #252734;
+  --surface-2: #2e303d;
+  --surface-3: #3b3d49;
+  --ink: #ffffff;
+  /* Lendex usa #858792 / #6f7180, mas dao 3.87:1 e 2.87:1 sobre o fundo —
+     abaixo do minimo WCAG AA (4.5:1). Clareados o suficiente para passar,
+     mantendo a mesma familia de cinza e a hierarquia entre os dois. */
+  --muted: #a8aab5;
+  --muted-dim: #9a9caa;
+  --line: rgba(255, 255, 255, 0.1);
+  --line-solid: #3b3d49;
+  --accent: #ffa200;
+  --radius-lg: 8px;
+  --radius-md: 6px;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Poppins", "Segoe UI", sans-serif;
+  --ease: all 0.5s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--muted);
+  background: var(--bg);
+  line-height: 1.75;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a,
+button,
+img,
+.btn {
+  transition: var(--ease);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+/* Aneis concentricos de fundo — assinatura do hero Lendex */
+.ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+
+.ambient::before {
+  width: 560px;
+  height: 560px;
+}
+
+.ambient::after {
+  width: 900px;
+  height: 900px;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.layout {
+  width: min(1240px, 92vw);
+  margin: 1.6rem auto 2.5rem;
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 1.2rem;
+}
+
+.menu-btn {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  z-index: 20;
+  border: 1px solid var(--line-solid);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink);
+  padding: 0.55rem 1.3rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn:hover {
+  background: var(--surface-3);
+}
+
+.sidebar {
+  position: sticky;
+  top: 1rem;
+  height: calc(100vh - 2rem);
+  display: grid;
+  /* minmax(0,...) deixa o card encolher abaixo do min-content em telas baixas,
+     senao ele empurra a navegacao para fora da sidebar sticky */
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 1rem;
+}
+
+.profile-card,
+.side-nav,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+}
+
+.profile-card {
+  padding: 2rem 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--surface-3) transparent;
+}
+
+/* ---------- Retrato com aneis + social flutuante ---------- */
+
+.portrait-shell {
+  position: relative;
+  width: 100%;
+  max-width: 210px;
+  margin: 0 auto 1.6rem;
+  aspect-ratio: 1;
+}
+
+.portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--surface-2);
+  position: relative;
+  z-index: 2;
+}
+
+.portrait-fallback {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  display: none;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  z-index: 1;
+}
+
+.portrait-shell.no-image .portrait {
+  display: none;
+}
+
+.portrait-shell.no-image .portrait-fallback {
+  display: grid;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.orbit-lg {
+  width: 152%;
+  height: 152%;
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.orbit-sm {
+  width: 124%;
+  height: 124%;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  background: var(--surface);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: lowercase;
+  z-index: 3;
+}
+
+.orbit-dot:hover {
+  background: var(--ink);
+  color: var(--surface);
+}
+
+.orbit-dot-top {
+  top: 6%;
+  right: -4%;
+}
+
+.orbit-dot-bottom {
+  bottom: 6%;
+  right: -4%;
+}
+
+/* ---------- Tipografia utilitaria ---------- */
+
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin: 0;
+}
+
+.profile-card h1 {
+  font-size: clamp(1.9rem, 2.6vw, 2.3rem);
+  line-height: 1.15;
+  margin: 0.5rem 0 0.7rem;
+}
+
+.intro {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- Botoes pill com wipe (Lendex .btn-fill-one) ---------- */
+
+.cta-row {
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 1.7rem;
+  height: 48px;
+  line-height: 46px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--ink);
+  border: 1px solid transparent;
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleX(0.3);
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 999px;
+  transition: var(--ease);
+  z-index: -1;
+}
+
+.btn:hover::after {
+  transform: translate(-50%, -50%) scaleX(1.2);
+}
+
+.btn-solid {
+  background: var(--surface-2);
+}
+
+.btn-solid:hover {
+  border-color: var(--surface-3);
+}
+
+.btn-solid:hover::after {
+  background: var(--surface-3);
+}
+
+.btn-soft {
+  border-color: var(--line-solid);
+}
+
+.btn-soft:hover {
+  border-color: var(--surface-2);
+}
+
+.btn-soft:hover::after {
+  background: var(--surface-2);
+}
+
+/* ---------- Contato compacto ---------- */
+
+.contact-mini {
+  margin-top: auto;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.contact-mini a,
+.contact-mini span {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.contact-mini a:hover {
+  color: var(--ink);
+}
+
+/* ---------- Navegacao lateral ---------- */
+
+.side-nav {
+  padding: 0.7rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.side-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 400;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+}
+
+.side-nav a:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+}
+
+/* ---------- Paineis ---------- */
+
+.content {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.panel {
+  padding: 2.2rem 2rem;
+}
+
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-panel::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  right: -140px;
+  top: -140px;
+  pointer-events: none;
+}
+
+.hero-panel h2 {
+  margin: 0.7rem 0 1rem;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  max-width: 22ch;
+}
+
+.hero-panel h2 span {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.hero-panel p {
+  color: var(--muted);
+  margin: 0;
+  max-width: 62ch;
+}
+
+.impact-list {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.impact-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.impact-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--ink);
+  border-radius: 50%;
+}
+
+.section-head h3 {
+  margin: 0.5rem 0 1.6rem;
+  font-size: clamp(1.7rem, 2.8vw, 2.25rem);
+  line-height: 1.2;
+}
+
+/* ---------- Chips de stack ---------- */
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chips span {
+  border: 1px solid var(--line-solid);
+  border-radius: 999px;
+  padding: 0.42rem 1.1rem;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 300;
+  font-size: 0.85rem;
+  transition: var(--ease);
+}
+
+.chips span:hover {
+  background: var(--surface-2);
+  color: var(--ink);
+  border-color: var(--surface-2);
+}
+
+/* ---------- Projeto em destaque ---------- */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.featured-project {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.8rem;
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 1.6rem;
+}
+
+.featured-project::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  right: -120px;
+  bottom: -160px;
+  pointer-events: none;
+}
+
+.featured-project h4 {
+  margin: 0.9rem 0 0.7rem;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  line-height: 1.25;
+}
+
+.featured-project p {
+  margin: 0 0 0.6rem;
+  font-size: 0.94rem;
+}
+
+.featured-actions {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-top: 1.3rem;
+}
+
+.featured-actions a {
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--ink);
+  border: 1px solid var(--line-solid);
+  border-radius: 999px;
+  padding: 0.5rem 1.3rem;
+  transition: var(--ease);
+}
+
+.featured-actions a:hover {
+  background: var(--surface-2);
+  border-color: var(--surface-2);
+}
+
+.featured-stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+  align-content: center;
+}
+
+.featured-stats li {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  padding: 0.85rem 1.1rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  transition: var(--ease);
+}
+
+.featured-stats li:hover {
+  background: var(--surface-2);
+}
+
+.featured-stats strong {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.featured-stats span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* ---------- Galeria de telas (carrossel) ---------- */
+
+/* Ocupa a linha inteira do .featured-project, abaixo do texto e dos numeros */
+.gallery {
+  grid-column: 1 / -1;
+  margin: 0.6rem 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-frame {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+/* Todas as capturas tem a mesma proporcao (~2:1), entao a moldura fixa evita
+   que a altura pule ao trocar de imagem antes do lazy-load terminar. */
+.gallery-track {
+  position: relative;
+  aspect-ratio: 2 / 1;
+}
+
+.gallery-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Sem JS as seis capturas simplesmente empilham, em vez de sobrar so a
+   primeira sem forma de avancar. */
+.js .gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s ease;
+}
+
+.js .gallery-slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--line-solid);
+  background: rgba(37, 39, 52, 0.86);
+  color: var(--ink);
+  font-size: 1.5rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 0 0 3px;
+}
+
+.gallery-nav:hover {
+  background: var(--ink);
+  color: var(--surface);
+  border-color: var(--ink);
+}
+
+.gallery-nav:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.gallery-prev {
+  left: 0.7rem;
+}
+
+.gallery-next {
+  right: 0.7rem;
+}
+
+/* .gallery-counter sozinho perde para o `.featured-project p` do card, que
+   reimporia margem e tamanho de fonte — dai a classe do pai no seletor. */
+.gallery .gallery-counter {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  z-index: 3;
+  margin: 0;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-solid);
+  background: rgba(37, 39, 52, 0.86);
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.gallery-caption {
+  margin: 0.9rem 0 0;
+  color: var(--muted-dim);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.gallery-dots {
+  display: flex;
+  gap: 0.45rem;
+  margin-top: 0.8rem;
+}
+
+.gallery-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line-solid);
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery-dot:hover {
+  border-color: var(--ink);
+}
+
+.gallery-dot.is-active {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.gallery-dot:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ---------- Cards de projeto ---------- */
+
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.7rem 1.5rem;
+  background: var(--bg);
+  transition: var(--ease);
+}
+
+.project-card:hover {
+  background: var(--surface-2);
+}
+
+.tag {
+  margin: 0;
+  display: inline-block;
+  padding: 0.28rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-solid);
+  background: transparent;
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  /* o pill so funciona em linha unica: quebrado, vira um losango */
+  white-space: nowrap;
+}
+
+.project-card h4,
+.timeline-item h4 {
+  margin: 1rem 0 0.6rem;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.project-card p {
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+}
+
+.meta {
+  color: var(--muted-dim);
+  font-size: 0.85rem;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.87rem;
+  border-bottom: 1px solid var(--line-solid);
+  padding-bottom: 2px;
+}
+
+.project-card a:hover {
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 1.7rem 1.5rem;
+  background: var(--bg);
+  transition: var(--ease);
+}
+
+.timeline-item:hover {
+  background: var(--surface-2);
+}
+
+.timeline-item p:last-child {
+  margin-bottom: 0;
+  font-size: 0.93rem;
+}
+
+.time {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Contato ---------- */
+
+.contact-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.contact-panel::after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+  left: 50%;
+  bottom: -320px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.contact-panel h3 {
+  margin: 0.7rem 0 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  max-width: 26ch;
+}
+
+.contact-grid {
+  margin-top: 1.8rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-grid a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.9rem;
+  border: 1px solid var(--line-solid);
+  border-radius: 999px;
+  padding: 0.75rem 1.4rem;
+  text-align: center;
+  transition: var(--ease);
+}
+
+.contact-grid a:hover {
+  background: var(--surface-2);
+  border-color: var(--surface-2);
+}
+
+/* ---------- Reveal ---------- */
+
+/* Escondido apenas quando o JS confirma que esta ativo (classe .js no <html>).
+   Sem JS, o conteudo renderiza normalmente em vez de ficar preso invisivel. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.js .reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ---------- Responsivo ---------- */
+
+/* Telas baixas (notebook 1080p e afins): compacta o card de perfil para que
+   contato e navegacao caibam na sidebar sem rolagem interna. */
+@media (min-width: 861px) and (max-height: 940px) {
+  .profile-card {
+    padding: 1.4rem 1.4rem 1.2rem;
+  }
+
+  .portrait-shell {
+    max-width: 148px;
+    margin-bottom: 1.1rem;
+  }
+
+  .profile-card h1 {
+    font-size: 1.6rem;
+    margin: 0.4rem 0 0.5rem;
+  }
+
+  .intro {
+    font-size: 0.88rem;
+  }
+
+  .cta-row {
+    margin-top: 1rem;
+  }
+
+  .cta-row .btn {
+    height: 42px;
+    line-height: 40px;
+    padding: 0 1.4rem;
+  }
+
+  .contact-mini {
+    padding-top: 1rem;
+    gap: 0.32rem;
+  }
+
+  .contact-mini a,
+  .contact-mini span {
+    font-size: 0.84rem;
+  }
+
+  .side-nav a {
+    padding: 0.42rem 1rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 290px minmax(0, 1fr);
+  }
+
+  .featured-project {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .menu-btn {
+    display: inline-block;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    margin-top: 4.5rem;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0.85rem;
+    right: 0.85rem;
+    top: 4.2rem;
+    height: auto;
+    max-height: calc(100vh - 5.4rem);
+    overflow: auto;
+    z-index: 15;
+    transform: translateY(-135%);
+    transition: transform 0.5s ease;
+  }
+
+  .sidebar.open {
+    transform: translateY(0);
+  }
+
+  .panel {
+    padding: 1.8rem 1.3rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait-shell {
+    max-width: 190px;
+  }
+
+  /* Em tela estreita a captura fica pequena demais para caber inteira:
+     mostra o topo e reduz as setas para nao cobrir a interface. */
+  .gallery-track {
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-nav {
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+  }
+
+  .gallery-prev {
+    left: 0.45rem;
+  }
+
+  .gallery-next {
+    right: 0.45rem;
+  }
+
+  .orbit,
+  .orbit-dot {
+    display: none;
+  }
+
+  .ambient::before,
+  .ambient::after {
+    display: none;
+  }
+}
