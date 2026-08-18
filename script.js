@@ -56,7 +56,7 @@ document.querySelectorAll('[data-gallery]').forEach((gallery) => {
     const dot = document.createElement('button');
     dot.type = 'button';
     dot.className = 'gallery-dot';
-    dot.setAttribute('aria-label', `Ir para a imagem ${i + 1} de ${slides.length}`);
+    dot.setAttribute('aria-label', `Go to image ${i + 1} of ${slides.length}`);
     dot.addEventListener('click', () => show(i));
     dotsBox?.appendChild(dot);
     return dot;

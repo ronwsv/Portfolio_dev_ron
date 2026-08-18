@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ron Williams Viera | AI Engineer</title>
     <meta
+      id="metaDescription"
       name="description"
-      content="Portfólio de Ron Williams Viera, AI Engineer e Full Stack Developer especializado em automação inteligente, plataformas escaláveis e IA aplicada a negócios."
+      content="Portfolio of Ron Williams Viera, AI Engineer and Full Stack Developer specializing in intelligent automation, scalable platforms, and applied business AI."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,18 +17,19 @@
     />
     <meta name="theme-color" content="#2a2c39" />
     <link rel="stylesheet" href="styles.css" />
-    <!-- Marca que o JS esta ativo antes da primeira pintura: o CSS so esconde os
-         .reveal sob esta classe. Sem JS, o conteudo aparece normalmente em vez
-         de ficar preso invisivel; e como roda no <head>, nao ha piscada. -->
+    <!-- Marks that JS is active before the first paint: the CSS only hides
+         .reveal under this class. Without JS, the content shows normally
+         instead of staying invisibly stuck; and since it runs in <head>,
+         there's no flash. -->
     <script>
       document.documentElement.classList.add("js");
     </script>
   </head>
   <body>
     <div class="ambient" aria-hidden="true"></div>
-    <button class="menu-btn" id="menuToggle" aria-label="Abrir menu lateral">Menu</button>
+    <button class="menu-btn" id="menuToggle" data-i18n-aria="menuOpen" aria-label="Open sidebar menu">Menu</button>
 
-    <div class="layout" id="inicio">
+    <div class="layout" id="home">
       <aside class="sidebar" id="sidebar">
         <div class="profile-card reveal">
           <figure class="portrait-shell">
@@ -36,7 +38,8 @@
               src="ron_note.webp"
               width="480"
               height="480"
-              alt="Foto de Ron Williams Viera"
+              data-i18n-alt="portraitAlt"
+              alt="Photo of Ron Williams Viera"
             />
             <div class="portrait-fallback">RW</div>
             <div class="orbit orbit-lg" aria-hidden="true"></div>
@@ -46,9 +49,9 @@
           </figure>
           <p class="eyebrow">AI Engineer</p>
           <h1>Ron Williams Viera</h1>
-          <p class="intro">
-            Eu desenho e entrego produtos inteligentes com IA aplicada,
-            automação e arquitetura de software para gerar impacto real no negócio.
+          <p class="intro" data-i18n="heroIntro">
+            I design and deliver intelligent products with applied AI,
+            automation, and software architecture to create real business impact.
           </p>
 
           <div class="cta-row">
@@ -56,45 +59,50 @@
             <a class="btn btn-soft" href="https://github.com/ronwsv" target="_blank" rel="noreferrer">GitHub</a>
           </div>
 
+          <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+            <button type="button" class="is-active" data-lang-btn="en" aria-pressed="true">EN</button>
+            <button type="button" data-lang-btn="pt" aria-pressed="false">PT</button>
+          </div>
+
           <div class="contact-mini">
             <a href="mailto:ronwsv@gmail.com">ronwsv@gmail.com</a>
             <a href="tel:+5511994306887">+55 11 99430-6887</a>
-            <span>São Paulo, Brasil · Remoto</span>
+            <span data-i18n="location">São Paulo, Brazil · Remote</span>
           </div>
         </div>
 
         <nav class="side-nav reveal">
-          <a href="#posicionamento">Posicionamento</a>
-          <a href="#expertise">Especialidades</a>
-          <a href="#projetos">Projetos</a>
-          <a href="#experiencias">Experiências</a>
-          <a href="#contato">Contato</a>
+          <a href="#positioning" data-i18n="navPositioning">Positioning</a>
+          <a href="#expertise" data-i18n="navExpertise">Expertise</a>
+          <a href="#projects" data-i18n="navProjects">Projects</a>
+          <a href="#experience" data-i18n="navExperience">Experience</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
         </nav>
       </aside>
 
       <main class="content">
-        <section class="panel hero-panel reveal" id="posicionamento">
+        <section class="panel hero-panel reveal" id="positioning">
           <p class="eyebrow">AI Engineer + Full Stack Builder</p>
-          <h2>
-            Construo sistemas com <span>IA aplicada</span> para aumentar
-            eficiência operacional, clareza decisória e velocidade de entrega.
+          <h2 data-i18n-html="posH2">
+            I build systems with <span>applied AI</span> to increase
+            operational efficiency, decision clarity, and delivery speed.
           </h2>
-          <p>
-            Meu posicionamento combina engenharia de software, integração de
-            dados e automação inteligente para transformar processos complexos em
-            plataformas confiáveis, escaláveis e orientadas a resultado.
+          <p data-i18n="posBody">
+            My positioning combines software engineering, data integration,
+            and intelligent automation to turn complex processes into reliable,
+            scalable, results-driven platforms.
           </p>
           <ul class="impact-list">
-            <li>Automação inteligente com IA, APIs e fluxos de dados</li>
-            <li>Arquitetura cloud escalável para produtos SaaS</li>
-            <li>Aplicações com foco em produtividade e confiabilidade</li>
+            <li data-i18n="posLi1">Intelligent automation with AI, APIs, and data pipelines</li>
+            <li data-i18n="posLi2">Scalable cloud architecture for SaaS products</li>
+            <li data-i18n="posLi3">Applications built for productivity and reliability</li>
           </ul>
         </section>
 
         <section class="panel reveal" id="expertise">
           <div class="section-head">
-            <p class="eyebrow">Especialidades</p>
-            <h3>Stack orientada para AI Products</h3>
+            <p class="eyebrow" data-i18n="expertiseEyebrow">Expertise</p>
+            <h3 data-i18n="expertiseH3">Stack built for AI products</h3>
           </div>
           <div class="chips">
             <span>Python</span>
@@ -119,50 +127,53 @@
           </div>
         </section>
 
-        <section class="panel reveal" id="projetos">
+        <section class="panel reveal" id="projects">
           <div class="section-head">
-            <p class="eyebrow">Projetos</p>
-            <h3>Projetos reais e em evolução</h3>
+            <p class="eyebrow" data-i18n="projectsEyebrow">Projects</p>
+            <h3 data-i18n="projectsH3">Real, evolving projects</h3>
           </div>
 
           <article class="featured-project">
             <div>
-              <p class="tag">Projeto em destaque</p>
-              <h4>Notebook Zang · Orquestração inteligente de análise contábil</h4>
-              <p>
-                Plataforma para acompanhamento de execuções, divergências e
-                pendências em módulos contábeis, com foco em produtividade do time
-                e rastreabilidade operacional.
+              <p class="tag" data-i18n="zTag">Featured project</p>
+              <h4 data-i18n="zH4">Notebook Zang · Intelligent orchestration for accounting analysis</h4>
+              <p data-i18n="zP1">
+                A platform for tracking runs, discrepancies, and pending items
+                across accounting modules, built for team productivity and
+                operational traceability.
               </p>
-              <p class="meta">
-                Cada fechamento roda os módulos contábeis em sequência e
-                consolida as divergências e ausências num painel único, para o
-                time atacar primeiro o que realmente trava o mês.
+              <p class="meta" data-i18n="zMeta">
+                Each closing runs the accounting modules in sequence and
+                consolidates discrepancies and missing items into a single
+                dashboard, so the team tackles what's actually blocking the
+                month first.
               </p>
               <div class="featured-actions">
-                <a href="https://claude.ai/code/artifact/df6c55f7-b7b1-4235-9847-c249e885905e" target="_blank" rel="noreferrer">Ver artifact</a>
-                <a href="#contato">Solicitar demo</a>
+                <a href="https://claude.ai/code/artifact/df6c55f7-b7b1-4235-9847-c249e885905e" target="_blank" rel="noreferrer" data-i18n="viewArtifact">View artifact</a>
+                <a href="#contact" data-i18n="requestDemo">Request a demo</a>
               </div>
             </div>
-            <ul class="featured-stats" aria-label="Indicadores do projeto">
-              <li><strong>188</strong><span>Total</span></li>
-              <li><strong>188</strong><span>Analisados</span></li>
-              <li><strong>173</strong><span>Pendências</span></li>
+            <ul class="featured-stats" data-i18n-aria="zStatsAria" aria-label="Project indicators">
+              <li><strong>188</strong><span data-i18n="statTotal">Total</span></li>
+              <li><strong>188</strong><span data-i18n="zStatAnalyzed">Analyzed</span></li>
+              <li><strong>173</strong><span data-i18n="zStatPending">Pending</span></li>
             </ul>
 
             <figure
               class="gallery"
               data-gallery
               role="group"
-              aria-roledescription="carrossel"
-              aria-label="Telas do Notebook Zang"
+              aria-roledescription="carousel"
+              data-i18n-aria="zGalleryAria"
+              aria-label="Notebook Zang screens"
             >
               <div class="gallery-frame">
                 <button
                   class="gallery-nav gallery-prev"
                   type="button"
                   data-gallery-prev
-                  aria-label="Imagem anterior"
+                  data-i18n-aria="prevImage"
+                  aria-label="Previous image"
                 >
                   <span aria-hidden="true">&#8249;</span>
                 </button>
@@ -171,48 +182,60 @@
                   <img
                     class="gallery-slide is-active"
                     src="assets/notebook/12.png"
-                    alt="Painel do fechamento com os módulos contábeis e o status de cada um"
-                    data-caption="Painel do fechamento: os módulos rodam em sequência e cada um devolve divergências, ausências e tempo de execução."
+                    data-i18n-alt="z1Alt"
+                    alt="Closing dashboard with the accounting modules and each one's status"
+                    data-i18n-caption="z1Cap"
+                    data-caption="Closing dashboard: the modules run in sequence, each one returning discrepancies, missing items, and run time."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/notebook/13.png"
-                    alt="Detalhe de um módulo com um lançamento pendente por nota fiscal ausente"
-                    data-caption="Pendência aberta: o lançamento existe, mas o documento não. O módulo diz o que falta, não apenas que falhou."
+                    data-i18n-alt="z2Alt"
+                    alt="Detail of a module with an entry pending due to a missing invoice"
+                    data-i18n-caption="z2Cap"
+                    data-caption="Open pending item: the entry exists, but the document doesn't. The module tells you what's missing, not just that it failed."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/notebook/14.png"
-                    alt="Módulo com as checagens de fatura, comprovante e conferência de valor aprovadas"
-                    data-caption="Quando bate, mostra por quê: fatura, comprovante e conferência de valor, cada checagem ligada ao documento que a sustenta."
+                    data-i18n-alt="z3Alt"
+                    alt="Module with invoice, receipt, and value-check validations approved"
+                    data-i18n-caption="z3Cap"
+                    data-caption="When it matches, it shows why: invoice, receipt, and value check, each one linked to the document that backs it."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/notebook/16.png"
-                    alt="Catálogo de skills, com uma regra de conferência por tipo de despesa"
-                    data-caption="Cada tipo de despesa tem sua própria skill — a regra de conferência é configurável sem passar por deploy."
+                    data-i18n-alt="z4Alt"
+                    alt="Skills catalog, with one validation rule per expense type"
+                    data-i18n-caption="z4Cap"
+                    data-caption="Each expense type has its own skill — the validation rule is configurable without a deploy."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/notebook/17.png"
-                    alt="Seleção de notebook por mês, com o histórico de fechamentos anteriores"
-                    data-caption="Um notebook por cliente e por mês, com o histórico de fechamentos anteriores sempre à mão."
+                    data-i18n-alt="z5Alt"
+                    alt="Notebook selection by month, with the history of previous closings"
+                    data-i18n-caption="z5Cap"
+                    data-caption="One notebook per client and per month, with the history of previous closings always on hand."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/notebook/15.png"
-                    alt="Formulário de abertura de chamado de suporte dentro da plataforma"
-                    data-caption="Suporte dentro da própria tela do fechamento, já vinculado à pasta e ao lançamento em questão."
+                    data-i18n-alt="z6Alt"
+                    alt="Support ticket form inside the platform"
+                    data-i18n-caption="z6Cap"
+                    data-caption="Support built into the closing screen itself, already linked to the relevant folder and entry."
                     loading="lazy"
                     decoding="async"
                   />
@@ -222,7 +245,8 @@
                   class="gallery-nav gallery-next"
                   type="button"
                   data-gallery-next
-                  aria-label="Próxima imagem"
+                  data-i18n-aria="nextImage"
+                  aria-label="Next image"
                 >
                   <span aria-hidden="true">&#8250;</span>
                 </button>
@@ -231,55 +255,57 @@
               </div>
 
               <figcaption class="gallery-caption" data-gallery-caption aria-live="polite">
-                Painel do fechamento: os módulos rodam em sequência e cada um devolve divergências, ausências e tempo de execução.
+                Closing dashboard: the modules run in sequence, each one returning discrepancies, missing items, and run time.
               </figcaption>
 
-              <div class="gallery-dots" data-gallery-dots role="tablist" aria-label="Selecionar imagem"></div>
+              <div class="gallery-dots" data-gallery-dots role="tablist" data-i18n-aria="selectImage" aria-label="Select image"></div>
             </figure>
           </article>
 
           <article class="featured-project">
             <div>
-              <p class="tag">Projeto em destaque · Código privado</p>
-              <h4>Avaliação de desempenho com feedback assistido por IA</h4>
-              <p>
-                Sistema de avaliação 180° que cruza a autoavaliação do
-                colaborador com a avaliação do gestor. O cálculo de divergência
-                é determinístico em código — o modelo escreve a leitura por cima
-                de números que ele não inventou, então o resultado é
-                reproduzível e auditável.
+              <p class="tag" data-i18n="rTag">Featured project · Private code</p>
+              <h4 data-i18n="rH4">Performance review with AI-assisted feedback</h4>
+              <p data-i18n="rP1">
+                A 180° review system that cross-references the employee's
+                self-assessment with the manager's evaluation. The discrepancy
+                calculation is deterministic, in code — the model writes its
+                reading on top of numbers it didn't invent, so the result is
+                reproducible and auditable.
               </p>
-              <p>
-                Gera plano de desenvolvimento com metas e checkpoints, além de um
-                roteiro de conversa para o gestor. Nenhum feedback chega ao
-                colaborador sem aprovação humana registrada.
+              <p data-i18n="rP2">
+                Generates a development plan with goals and checkpoints, plus
+                a talking-points script for the manager. No feedback reaches
+                the employee without a recorded human approval.
               </p>
               <p class="meta">
                 SvelteKit · TypeScript · Drizzle · SQLite · OpenAI · Docker
               </p>
               <div class="featured-actions">
-                <a href="#contato">Solicitar detalhes técnicos</a>
+                <a href="#contact" data-i18n="reqDetails">Request technical details</a>
               </div>
             </div>
-            <ul class="featured-stats" aria-label="Indicadores do ciclo de avaliação">
-              <li><strong>85</strong><span>Avaliados</span></li>
-              <li><strong>100%</strong><span>Cobertura</span></li>
-              <li><strong>3</strong><span>Trilhas</span></li>
+            <ul class="featured-stats" data-i18n-aria="rStatsAria" aria-label="Review cycle indicators">
+              <li><strong>85</strong><span data-i18n="rStatReviewed">Reviewed</span></li>
+              <li><strong>100%</strong><span data-i18n="rStatCoverage">Coverage</span></li>
+              <li><strong>3</strong><span data-i18n="rStatTracks">Tracks</span></li>
             </ul>
 
             <figure
               class="gallery"
               data-gallery
               role="group"
-              aria-roledescription="carrossel"
-              aria-label="Telas do sistema de avaliação"
+              aria-roledescription="carousel"
+              data-i18n-aria="rGalleryAria"
+              aria-label="Review system screens"
             >
               <div class="gallery-frame">
                 <button
                   class="gallery-nav gallery-prev"
                   type="button"
                   data-gallery-prev
-                  aria-label="Imagem anterior"
+                  data-i18n-aria="prevImage"
+                  aria-label="Previous image"
                 >
                   <span aria-hidden="true">&#8249;</span>
                 </button>
@@ -288,40 +314,50 @@
                   <img
                     class="gallery-slide is-active"
                     src="assets/avaliacao/7.png"
-                    alt="Tela de seleção do colaborador, com as trilhas de avaliação em abas"
-                    data-caption="Cada trilha tem seu próprio conjunto de competências. Nomes e identificação anonimizados nas capturas."
+                    data-i18n-alt="r1Alt"
+                    alt="Employee selection screen, with review tracks in tabs"
+                    data-i18n-caption="r1Cap"
+                    data-caption="Each track has its own set of competencies. Names and identifying details are anonymized in the screenshots."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/avaliacao/8.png"
-                    alt="Comparação de notas por pilar e por competência, com a coluna de divergência"
-                    data-caption="Autoavaliação e nota do gestor lado a lado: a divergência de cada competência sai de código, não do modelo."
+                    data-i18n-alt="r2Alt"
+                    alt="Score comparison by pillar and competency, with the discrepancy column"
+                    data-i18n-caption="r2Cap"
+                    data-caption="Self-assessment and manager score side by side: each competency's discrepancy comes from code, not from the model."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/avaliacao/9.png"
-                    alt="Análise de IA com pontos fortes e oportunidades de desenvolvimento"
-                    data-caption="A IA escreve a leitura por cima desses números — cada ponto ancorado num pilar, e nada sai sem aprovação do gestor."
+                    data-i18n-alt="r3Alt"
+                    alt="AI analysis with strengths and development opportunities"
+                    data-i18n-caption="r3Cap"
+                    data-caption="The AI writes its reading on top of these numbers — each point anchored to a pillar, and nothing goes out without manager approval."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/avaliacao/10.png"
-                    alt="Painel com o progresso do ciclo e a distribuição dos padrões de autopercepção"
-                    data-caption="Painel do ciclo: o que já foi respondido, analisado e devolvido em conversa 1:1, com o padrão de autopercepção do grupo."
+                    data-i18n-alt="r4Alt"
+                    alt="Dashboard with cycle progress and the distribution of self-perception patterns"
+                    data-i18n-caption="r4Cap"
+                    data-caption="Cycle dashboard: what's already been answered, analyzed, and delivered in a 1:1 conversation, with the group's self-perception pattern."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/avaliacao/11.png"
-                    alt="Média por pilar e ranking das competências com maior divergência"
-                    data-caption="Média por pilar e as competências de maior divergência — onde o desenvolvimento tem mais a ganhar."
+                    data-i18n-alt="r5Alt"
+                    alt="Average by pillar and ranking of the competencies with the highest discrepancy"
+                    data-i18n-caption="r5Cap"
+                    data-caption="Average by pillar and the competencies with the biggest discrepancy — where development has the most to gain."
                     loading="lazy"
                     decoding="async"
                   />
@@ -331,7 +367,8 @@
                   class="gallery-nav gallery-next"
                   type="button"
                   data-gallery-next
-                  aria-label="Próxima imagem"
+                  data-i18n-aria="nextImage"
+                  aria-label="Next image"
                 >
                   <span aria-hidden="true">&#8250;</span>
                 </button>
@@ -340,65 +377,69 @@
               </div>
 
               <figcaption class="gallery-caption" data-gallery-caption aria-live="polite">
-                Cada trilha tem seu próprio conjunto de competências. Nomes e identificação anonimizados nas capturas.
+                Each track has its own set of competencies. Names and identifying details are anonymized in the screenshots.
               </figcaption>
 
-              <div class="gallery-dots" data-gallery-dots role="tablist" aria-label="Selecionar imagem"></div>
+              <div class="gallery-dots" data-gallery-dots role="tablist" data-i18n-aria="selectImage" aria-label="Select image"></div>
             </figure>
           </article>
 
           <article class="featured-project">
             <div>
-              <p class="tag">Projeto em destaque · Autoria da IA</p>
-              <h4>Atas · Do áudio da assembleia ao documento formal</h4>
-              <p>
-                Redigir uma ata consumia quase um dia de trabalho de um gerente:
-                ouvir de novo a gravação inteira de uma assembleia de três a
-                quatro horas, reconstituir quem disse o quê e anotar à mão o que
-                importava. Construí a frente de IA da plataforma para atacar
-                exatamente essa etapa — hoje o gerente parte de um rascunho já
-                estruturado, em vez da estaca zero.
+              <p class="tag" data-i18n="aTag">Featured project · AI authorship</p>
+              <h4 data-i18n="aH4">Atas · From assembly audio to formal minutes</h4>
+              <p data-i18n="aP1">
+                Writing up meeting minutes used to eat almost a full day of a
+                property manager's work: listening back to an entire
+                three-to-four-hour assembly recording, reconstructing who said
+                what, and taking notes by hand on what mattered. I built the
+                platform's AI layer to tackle exactly that step — today the
+                manager starts from an already-structured draft instead of a
+                blank page.
               </p>
-              <p>
-                Um pipeline assíncrono de duas fases — transcrição com separação
-                de falantes, depois estruturação no padrão formal exigido — em
-                que a transcrição fica reaproveitável sem reprocessar o áudio. E
-                um editor colaborativo com assistente que consulta os documentos
-                do próprio condomínio: em vez de empurrar contexto no prompt, o
-                modelo recebe uma ferramenta de busca e decide sozinho quando
-                consultar, devolvendo o arquivo e o trecho que sustentam cada
-                resposta. Cada condomínio tem seu contexto isolado.
+              <p data-i18n="aP2">
+                A two-phase async pipeline — transcription with speaker
+                separation, then structuring into the required formal format —
+                where the transcript stays reusable without reprocessing the
+                audio. Plus a collaborative editor with an assistant that
+                consults the condo's own documents: instead of stuffing
+                context into the prompt, the model gets a search tool and
+                decides on its own when to use it, returning the file and
+                passage that back each answer. Each condo has its own isolated
+                context.
               </p>
-              <p class="meta">
-                Pipeline em adoção crescente: de zero a cerca de dez assembleias
-                transcritas automaticamente por mês, ao longo de seis meses.
+              <p class="meta" data-i18n="aMeta1">
+                Growing adoption: from zero to around ten assemblies
+                transcribed automatically per month, over six months.
               </p>
               <p class="meta">
                 SvelteKit · Tiptap · Flask · Celery · Redis · GPT-4o · AssemblyAI · Docker
               </p>
               <div class="featured-actions">
-                <a href="#contato">Solicitar detalhes técnicos</a>
+                <a href="#contact" data-i18n="reqDetails">Request technical details</a>
               </div>
             </div>
-            <ul class="featured-stats" aria-label="Indicadores da plataforma">
-              <li><strong>582</strong><span>Atas</span></li>
-              <li><strong>201</strong><span>Condomínios</span></li>
-              <li><strong>12</strong><span>Meses no ar</span></li>
+            <ul class="featured-stats" data-i18n-aria="platformIndicators" aria-label="Platform indicators">
+              <li><strong>582</strong><span data-i18n="aStatMinutes">Minutes</span></li>
+              <li><strong>201</strong><span data-i18n="aStatCondos">Condos</span></li>
+              <li><strong>12</strong><span data-i18n="aStatMonths">Months live</span></li>
             </ul>
 
             <figure
               class="gallery"
               data-gallery
               role="group"
-              aria-roledescription="carrossel"
-              aria-label="Telas da plataforma Atas"
+              aria-roledescription="carousel"
+              data-i18n-aria="aGalleryAria"
+              aria-label="Atas platform screens"
             >
               <div class="gallery-frame">
                 <button
                   class="gallery-nav gallery-prev"
                   type="button"
                   data-gallery-prev
-                  aria-label="Imagem anterior"
+                  data-i18n-aria="prevImage"
+                  aria-label="Previous image"
                 >
                   <span aria-hidden="true">&#8249;</span>
                 </button>
@@ -407,48 +448,60 @@
                   <img
                     class="gallery-slide is-active"
                     src="assets/atas/1.png"
-                    alt="Tela da ATA com o botão Gerar ATA com IA e a opção de envio manual do documento"
-                    data-caption="Ponto de partida: a ata pode ser gerada pela IA a partir do áudio ou enviada manualmente."
+                    data-i18n-alt="a1Alt"
+                    alt="Minutes screen with the Generate with AI button and the manual document upload option"
+                    data-i18n-caption="a1Cap"
+                    data-caption="Starting point: the minutes can be generated by AI from the audio or uploaded manually."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/atas/2.png"
-                    alt="Pipeline em execução com as etapas transcrição do áudio, análise com IA e edição no editor"
-                    data-caption="Pipeline assíncrono em duas fases: transcrição com separação de falantes, depois estruturação."
+                    data-i18n-alt="a2Alt"
+                    alt="Pipeline in progress, showing audio transcription, AI analysis, and editing stages"
+                    data-i18n-caption="a2Cap"
+                    data-caption="Two-phase async pipeline: transcription with speaker separation, then structuring."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/atas/3.png"
-                    alt="Editor da ata com o documento estruturado ao centro e a transcrição por falante à direita"
-                    data-caption="Editor colaborativo: documento no padrão formal ao centro, transcrição por falante sempre ao lado."
+                    data-i18n-alt="a3Alt"
+                    alt="Minutes editor with the structured document in the center and the speaker-separated transcript on the right"
+                    data-i18n-caption="a3Cap"
+                    data-caption="Collaborative editor: the formal document in the center, the speaker-by-speaker transcript always alongside."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/atas/4.png"
-                    alt="Ação de IA processando o trecho selecionado do documento"
-                    data-caption="Ações de IA sobre o trecho selecionado — reescrever, formalizar, resumir ou expandir."
+                    data-i18n-alt="a4Alt"
+                    alt="AI action processing the selected passage of the document"
+                    data-i18n-caption="a4Cap"
+                    data-caption="AI actions on the selected passage — rewrite, formalize, summarize, or expand."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/atas/5.png"
-                    alt="Sugestão da IA exibida como diff com os botões aceitar e rejeitar"
-                    data-caption="Toda sugestão chega como diff: nada entra no documento sem aceite explícito do gerente."
+                    data-i18n-alt="a5Alt"
+                    alt="AI suggestion shown as a diff with accept and reject buttons"
+                    data-i18n-caption="a5Cap"
+                    data-caption="Every suggestion arrives as a diff: nothing goes into the document without the manager's explicit approval."
                     loading="lazy"
                     decoding="async"
                   />
                   <img
                     class="gallery-slide"
                     src="assets/atas/6.png"
-                    alt="Reescrita de um item inteiro da ata comparando texto original e texto sugerido"
-                    data-caption="Reescrita de um item inteiro: original e proposta lado a lado, com os números preservados."
+                    data-i18n-alt="a6Alt"
+                    alt="Full rewrite of a minutes item comparing the original text with the suggested text"
+                    data-i18n-caption="a6Cap"
+                    data-caption="Full rewrite of one item: original and proposal side by side, with the numbers preserved."
                     loading="lazy"
                     decoding="async"
                   />
@@ -458,7 +511,8 @@
                   class="gallery-nav gallery-next"
                   type="button"
                   data-gallery-next
-                  aria-label="Próxima imagem"
+                  data-i18n-aria="nextImage"
+                  aria-label="Next image"
                 >
                   <span aria-hidden="true">&#8250;</span>
                 </button>
@@ -467,143 +521,145 @@
               </div>
 
               <figcaption class="gallery-caption" data-gallery-caption aria-live="polite">
-                Ponto de partida: a ata pode ser gerada pela IA a partir do áudio ou enviada manualmente.
+                Starting point: the minutes can be generated by AI from the audio or uploaded manually.
               </figcaption>
 
-              <div class="gallery-dots" data-gallery-dots role="tablist" aria-label="Selecionar imagem"></div>
+              <div class="gallery-dots" data-gallery-dots role="tablist" data-i18n-aria="selectImage" aria-label="Select image"></div>
             </figure>
           </article>
 
           <article class="featured-project">
             <div>
-              <p class="tag">Projeto em destaque · Código público</p>
-              <h4>Bazarof · Plataforma operacional para negócios educacionais</h4>
-              <p>
-                SaaS multi-tenant no ar: cada escola recebe o próprio subdomínio,
-                site de captação e portal do aluno, com acesso separado para o
-                contador. Cobrança recorrente, assinatura digital de contratos e
-                WhatsApp integrados ao fluxo.
+              <p class="tag" data-i18n="bTag">Featured project · Public code</p>
+              <h4 data-i18n="bH4">Bazarof · Operations platform for education businesses</h4>
+              <p data-i18n="bP1">
+                Live multi-tenant SaaS: each school gets its own subdomain,
+                lead-capture site, and student portal, with separate access
+                for the accountant. Recurring billing, digital contract
+                signing, and WhatsApp built into the flow.
               </p>
-              <p>
-                A camada de IA gera o feedback pós-aula a partir das anotações do
-                professor, resume progresso e sinaliza risco de evasão — e só
-                roda quando a aula está concluída e tem notas registradas, para
-                não produzir avaliação sobre dado que não existe.
+              <p data-i18n="bP2">
+                The AI layer generates post-class feedback from the teacher's
+                notes, summarizes progress, and flags dropout risk — and only
+                runs once the class is marked complete with notes on record,
+                so it never produces an evaluation from data that doesn't
+                exist.
               </p>
-              <p class="meta">
-                Cada regra de segurança tem um teste que a defende: se uma
-                refatoração futura enfraquecer a proteção sem querer, a suíte
-                quebra antes de o código chegar à produção. A cobertura vai do
-                isolamento entre escolas às permissões por papel e à
-                anonimização de dados pessoais.
+              <p class="meta" data-i18n="bMeta1">
+                Every security rule has a test defending it: if a future
+                refactor accidentally weakens the protection, the suite
+                breaks before the code reaches production. Coverage spans
+                school-to-school isolation, role-based permissions, and
+                personal data anonymization.
               </p>
               <p class="meta">
                 FastAPI · SQLModel · PostgreSQL · Celery · Redis · SvelteKit · Docker
               </p>
               <div class="featured-actions">
-                <a href="https://bazarof.com.br/" target="_blank" rel="noreferrer">Ver plataforma</a>
-                <a href="https://github.com/ronwsv/mybusiness" target="_blank" rel="noreferrer">Ver repositório</a>
+                <a href="https://bazarof.com.br/" target="_blank" rel="noreferrer" data-i18n="viewPlatform">View platform</a>
+                <a href="https://github.com/ronwsv/mybusiness" target="_blank" rel="noreferrer" data-i18n="viewRepo">View repository</a>
               </div>
             </div>
-            <ul class="featured-stats" aria-label="Indicadores da plataforma">
-              <li><strong>25</strong><span>Módulos de API</span></li>
-              <li><strong>36</strong><span>Testes de segurança</span></li>
-              <li><strong>7</strong><span>Serviços</span></li>
+            <ul class="featured-stats" data-i18n-aria="platformIndicators" aria-label="Platform indicators">
+              <li><strong>25</strong><span data-i18n="bStatApi">API modules</span></li>
+              <li><strong>36</strong><span data-i18n="bStatSec">Security tests</span></li>
+              <li><strong>7</strong><span data-i18n="bStatSvc">Services</span></li>
             </ul>
           </article>
 
           <div class="projects-grid">
             <article class="project-card">
-              <p class="tag">Em andamento · GitHub público</p>
+              <p class="tag" data-i18n="inProgressGithub">In progress · Public on GitHub</p>
               <h4>Rbot_RAG</h4>
-              <p>
-                Chatbot com RAG para respostas contextualizadas com foco em
-                cenários de atendimento e suporte.
+              <p data-i18n="c1P">
+                RAG-powered chatbot for contextualized answers, built for
+                support and service scenarios.
               </p>
               <p class="meta">Python · LLMs · RAG</p>
-              <a href="https://github.com/ronwsv/Rbot_RAG" target="_blank" rel="noreferrer">Ver repositório</a>
+              <a href="https://github.com/ronwsv/Rbot_RAG" target="_blank" rel="noreferrer" data-i18n="viewRepo">View repository</a>
             </article>
 
             <article class="project-card">
-              <p class="tag">Em andamento · GitHub público</p>
+              <p class="tag" data-i18n="inProgressGithub">In progress · Public on GitHub</p>
               <h4>Web-Scrapping_imobiliario_com_IA</h4>
-              <p>
-                Captura automatizada de dados com apoio de IA e saída estruturada
-                para JSON e planilhas.
+              <p data-i18n="c2P">
+                AI-assisted automated data capture with structured output to
+                JSON and spreadsheets.
               </p>
-              <p class="meta">Python · Scraping · IA</p>
-              <a href="https://github.com/ronwsv/Web-Scrapping_imobiliario_com_IA" target="_blank" rel="noreferrer">Ver repositório</a>
+              <p class="meta" data-i18n="c2Meta">Python · Scraping · AI</p>
+              <a href="https://github.com/ronwsv/Web-Scrapping_imobiliario_com_IA" target="_blank" rel="noreferrer" data-i18n="viewRepo">View repository</a>
             </article>
 
             <article class="project-card">
-              <p class="tag">Entregue · GitHub público</p>
+              <p class="tag" data-i18n="shippedGithub">Shipped · Public on GitHub</p>
               <h4>Transcricao_2.1</h4>
-              <p>
-                Aplicação de transcrição com filas assíncronas para suportar
-                processamento escalável de áudio.
+              <p data-i18n="c3P">
+                Transcription app with async queues to support scalable
+                audio processing.
               </p>
               <p class="meta">Python · Flask · Redis · Celery</p>
-              <a href="https://github.com/ronwsv/Transcricao_2.1" target="_blank" rel="noreferrer">Ver repositório</a>
+              <a href="https://github.com/ronwsv/Transcricao_2.1" target="_blank" rel="noreferrer" data-i18n="viewRepo">View repository</a>
             </article>
 
             <article class="project-card">
-              <p class="tag">Entregue · GitHub público</p>
+              <p class="tag" data-i18n="shippedGithub">Shipped · Public on GitHub</p>
               <h4>controle-ponto-eletronico</h4>
-              <p>
-                Produto web para controle de ponto com interface moderna e foco
-                em usabilidade operacional.
+              <p data-i18n="c4P">
+                Web product for time-tracking with a modern interface, built
+                for operational usability.
               </p>
               <p class="meta">TypeScript · React · Tailwind</p>
-              <a href="https://github.com/ronwsv/controle-ponto-eletronico" target="_blank" rel="noreferrer">Ver repositório</a>
+              <a href="https://github.com/ronwsv/controle-ponto-eletronico" target="_blank" rel="noreferrer" data-i18n="viewRepo">View repository</a>
             </article>
 
             <article class="project-card">
-              <p class="tag">Código privado · Em produção</p>
-              <h4>Previsão C · Classificação contábil assistida por IA</h4>
-              <p>
-                Sugere a conta contábil de cada despesa usando o histórico do
-                próprio cliente como fonte de verdade. Arquitetura em cascata:
-                uma base local de decisões anteriores resolve o que já tem
-                precedente e só o restante chega ao LLM — cada resposta nova
-                realimenta a base, então o custo por classificação cai conforme
-                o uso cresce.
+              <p class="tag" data-i18n="c5Tag">Private code · In production</p>
+              <h4 data-i18n="c5H4">Previsão C · AI-assisted accounting classification</h4>
+              <p data-i18n="c5P1">
+                Suggests the accounting entry for each expense using the
+                client's own history as the source of truth. Cascading
+                architecture: a local base of prior decisions resolves
+                anything with precedent, and only the rest reaches the LLM —
+                each new answer feeds back into the base, so the cost per
+                classification drops as usage grows.
               </p>
-              <p>
-                Toda sugestão vem com confiança, justificativa e os precedentes
-                que a sustentam, para o time contábil auditar.
+              <p data-i18n="c5P2">
+                Every suggestion comes with a confidence score, a rationale,
+                and the precedents behind it, for the accounting team to
+                audit.
               </p>
               <p class="meta">Python · Flask · Gemini · RAG · SQLite · Docker</p>
-              <a href="#contato">Solicitar detalhes técnicos</a>
+              <a href="#contact" data-i18n="reqDetails">Request technical details</a>
             </article>
 
             <article class="project-card">
-              <p class="tag">Curadoria AI Engineer</p>
-              <h4>Labs e repositórios de referência</h4>
-              <p>
-                Exploração contínua de agentic systems e AI engineering para
-                acelerar experimentação e transferência para produção.
+              <p class="tag" data-i18n="c6Tag">AI Engineer curation</p>
+              <h4 data-i18n="c6H4">Reference labs and repositories</h4>
+              <p data-i18n="c6P">
+                Ongoing exploration of agentic systems and AI engineering to
+                speed up experimentation and production handoff.
               </p>
               <p class="meta">BrowserOS · ai-engineering-hub · tensorzero</p>
-              <a href="https://github.com/ronwsv?tab=repositories" target="_blank" rel="noreferrer">Ver todos os repositórios</a>
+              <a href="https://github.com/ronwsv?tab=repositories" target="_blank" rel="noreferrer" data-i18n="c6Link">View all repositories</a>
             </article>
           </div>
         </section>
 
-        <section class="panel reveal" id="experiencias">
+        <section class="panel reveal" id="experience">
           <div class="section-head">
-            <p class="eyebrow">Experiências</p>
-            <h3>Trajetória em software e IA aplicada</h3>
+            <p class="eyebrow" data-i18n="expEyebrow">Experience</p>
+            <h3 data-i18n="expH3">Track record in software and applied AI</h3>
           </div>
 
           <div class="timeline">
             <article class="timeline-item">
-              <p class="time">2024 - Atual</p>
+              <p class="time" data-i18n="xp1Time">2024 - Present</p>
               <h4>Zangari Administradora</h4>
               <p class="meta">Software Developer | AI-driven solutions</p>
-              <p>
-                Desenvolvimento de sistemas com Python, React e AWS,
-                integrações por API, autenticação, dashboards e automação para o
-                time contábil.
+              <p data-i18n="xp1P">
+                Building systems with Python, React, and AWS — API
+                integrations, authentication, dashboards, and automation for
+                the accounting team.
               </p>
             </article>
 
@@ -611,17 +667,18 @@
               <p class="time">2021 - 2022</p>
               <h4>Enjoy2Learn</h4>
               <p class="meta">Web Development & Marketing Operations</p>
-              <p>
-                Evolução de site e landing pages com foco em performance,
-                aquisição e análise de campanhas conectadas aos objetivos de negócio.
+              <p data-i18n="xp2P">
+                Evolving the site and landing pages with a focus on
+                performance, acquisition, and campaign analysis tied to
+                business goals.
               </p>
             </article>
           </div>
         </section>
 
-        <section class="panel contact-panel reveal" id="contato">
-          <p class="eyebrow">Contato</p>
-          <h3>Disponível para projetos remotos e consultoria em IA aplicada.</h3>
+        <section class="panel contact-panel reveal" id="contact">
+          <p class="eyebrow" data-i18n="ctEyebrow">Contact</p>
+          <h3 data-i18n="ctH3">Available for remote projects and applied AI consulting.</h3>
           <div class="contact-grid">
             <a href="mailto:ronwsv@gmail.com">ronwsv@gmail.com</a>
             <a href="tel:+5511994306887">+55 11 99430-6887</a>
@@ -632,6 +689,7 @@
       </main>
     </div>
 
+    <script src="i18n.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
